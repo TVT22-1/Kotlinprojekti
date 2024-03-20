@@ -4,72 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#222222"
     android:gravity="center"
-    android:layout_margin="16dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="112dp"
+        android:layout_height="73dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/tictactoe"
+       />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:fontFamily="@font/trade_winds"
+        android:padding="8dp"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+
+        android:shadowDy="3"
+        android:shadowRadius="10"
         android:text="@string/app_name"
-        android:textStyle="bold"
+        android:textColor="#389781"
         android:textSize="28sp"
-        android:layout_margin="8dp"
-        android:padding="8dp"/>
+        android:textStyle="bold" />
+
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/play_offline_btn"
-        android:text="Play Offline"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
         android:layout_margin="8dp"
-        android:padding="8dp"/>
+        android:backgroundTint="#E4B4E3"
+        android:fontFamily="@font/acme"
+        android:padding="8dp"
+        android:shadowColor="@color/white"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
+        android:text="PLAY OFFLINE"
+        android:textColor="#222222" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Or"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_margin="8dp"
-        android:padding="8dp"/>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/create_online_game_btn"
-        android:text="Create Game Online"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
         android:layout_margin="8dp"
-        android:padding="8dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Or"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_margin="8dp"
-        android:padding="8dp"/>
+        android:backgroundTint="#E4B4E3"
+        android:fontFamily="@font/acme"
+        android:padding="8dp"
+        android:shadowColor="@color/white"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
+        android:text="CREATE GAME ONLINE"
+        android:textColor="#222222" />
 
     <EditText
+        android:id="@+id/game_id_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/game_id_input"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:inputType="number"
         android:layout_margin="8dp"
-        android:padding="8dp"
-        android:hint="Enter game Id"/>
+        android:fontFamily="@font/acme"
+        android:hint="Enter game Id"
+        android:inputType="number"
+        android:paddingTop="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AEAEAE"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/join_online_game_btn"
-        android:text="Join Game Online"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
         android:layout_margin="8dp"
-        android:padding="8dp"/>
+        android:backgroundTint="#E4B4E3"
+        android:fontFamily="@font/acme"
+        android:padding="8dp"
+        android:shadowColor="@color/white"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
+        android:text="JOIN GAME ONLINE"
+        android:textColor="#222222" />
 
 </LinearLayout>
 
