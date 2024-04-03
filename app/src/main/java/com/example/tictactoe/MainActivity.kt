@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set click listeners for the buttons
         binding.playOfflineBtn.setOnClickListener {
             createOfflineGame()
         }
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
+    // Function to create an offline game
     fun createOfflineGame(){
         GameData.saveGameModel(
             GameModel(
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         )
         startGame()
     }
+    // Function to create an online game
     fun createOnlineGame(){
         GameData.myID = "X"
         GameData.saveGameModel(
@@ -53,22 +55,27 @@ class MainActivity : AppCompatActivity() {
         )
         startGame()
     }
-
+    // Function to join an online game
     fun joinOnlineGame(){
         var gameId = binding.gameIdInput.text.toString()
         if(gameId.isEmpty()){
+            // Show error if game ID is empty
             binding.gameIdInput.setError("Please enter game ID")
             return
         }
+        // Set player's ID to O
         GameData.myID = "O"
+        // Retrieve game model from Firestore based on the entered game ID
         Firebase.firestore.collection("games")
             .document(gameId)
             .get()
             .addOnSuccessListener {
                 val model = it?.toObject(GameModel::class.java)
                 if(model==null){
+                    // Show error if game ID is not valid
                     binding.gameIdInput.setError("Please enter valid game ID")
                 }else{
+                    // Update game status to JOINED and save the model
                     model.gameStatus = GameStatus.JOINED
                     GameData.saveGameModel(model)
                     startGame()
@@ -76,7 +83,7 @@ class MainActivity : AppCompatActivity() {
             }
 
     }
-
+    // Function to start the game activity
     fun startGame(){
         startActivity(Intent(this,GameActivity::class.java))
     }
